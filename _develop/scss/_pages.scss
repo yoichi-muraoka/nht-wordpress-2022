@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+// Top Page
+#welcome {
+    height: 100vh;
+    background-image: url(../images/top_welcome.1.jpg);
+    background-position: center center;
+    background-size: auto 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+#news a, #message a {
+    text-decoration: none;
+}

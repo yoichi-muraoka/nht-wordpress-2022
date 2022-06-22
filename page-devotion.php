@@ -80,7 +80,7 @@ get_header();
     <!-- Schedule -->
     <section id="devo-schedule">
         <div class="black-filter">
-            <?php require_once(get_stylesheet_directory() . '/parts/readingPlan.php'); ?>
+            <?php require_once(get_stylesheet_directory() . '/parts/readingPlanList.php'); ?>
         </div>
     </section>
     

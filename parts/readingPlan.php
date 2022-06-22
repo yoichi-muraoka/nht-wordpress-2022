@@ -1,83 +1,59 @@
-<?php
-require_once(get_stylesheet_directory() . '/utility/devotion.func.php');
-$annualPlan = getReadingPlan();
-$englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-?>
-
-<div class="row">
-    <h2><span class="section-title-en">Reading Plan</span><span class="section-title-ja">聖書通読表</span></h2>
+<div id="reading-plan">
+    <?php require(get_stylesheet_directory() . '/parts/loading.php'); ?>
 </div>
 
-<!-- 月ボタン -->
-<div class="col-xs-12 col-md-6">
-    <ul class="row month-buttons">
-        <?php for ($m = 1; $m <= 12; $m++) : ?>
-            <li class="col-xs-2 col-md-4">
-                <a class="month-button" href=""><?php h($m); ?></a>
-            </li>
-        <?php endfor; ?>
-    </ul>
-</div>
-
-<!-- 通読表 -->
-<div class="col-xs-12 col-md-6">
-    <div class="col-xs-12">
-        <p>通読表をクリックすると、Bible Gatewayというウェブページが開き、該当の聖書箇所を読むことができます。<br>
-            By clicking the Scriptures, you can read the passage on Bible Gateway web service.</p>
+<template id="reading-plan-fragment" data-api-url="<?php echo home_url('/devotion/api'); ?>">
+    <div class="text-center">
+        <a class="btn btn-secondary text-white mb-2" href="" target="_blank">
+            <!-- 日本語聖書箇所 -->
+        </a>
+        <a class="btn btn-secondary text-white mb-2" href="" target="_blank">
+            <!-- 英語聖書箇所 -->
+        </a>
     </div>
-    <?php for ($m = 1; $m <= 12; $m++) : ?>
-        <dl class="monthly-plan">
-            <dt><?php h($m); ?>月 / <?php h($englishMonths[$m - 1]) ?></dt>
-            <dd>
-                <ol>
-                    <?php foreach ($annualPlan[$m - 1] as $daylyPlan) : ?>
-                        <?php
-                        $url = 'https://www.biblegateway.com/passage/?search=' .
-                            urlencode(str_replace('/', ';', $daylyPlan[1]));
-                        ?>
-                        <li>
-                            <a target="_blank" href="<?php echo $url . '&version=JLB' ?>">
-                                <?php echo htmlspecialchars($daylyPlan[0], ENT_QUOTES); ?>
-                            </a>
-                            /
-                            <a target="_blank" href="<?php echo $url . '&version=NIV' ?>">
-                                <?php h($daylyPlan[1]); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; //month -> day 
-                    ?>
-                </ol>
-            </dd>
-        </dl>
-    <?php endfor; //annual -> month 
-    ?>
-</div>
+</template>
+
+<template id="reading-plan-fail-fragment" data-api-url="<?php echo home_url('/devotion/api'); ?>">
+    <div class="text-center">
+        <p>聖書箇所の読み込みに失敗しました。</p>
+        <p>Fail to load today's devotion plan.</p>
+    </div>
+</template>
 
 <script>
-    // その日の聖書箇所をハイライト
+    async function setReadingPlan(url) {
+        const res = await fetch(url);
+        const json = await res.json();
+
+        const readingPlan = document.getElementById('reading-plan');
+        let elementToAppend;
+        if (json.status == 400) {
+            const fragment = document.getElementById('reading-plan-fail-fragment');
+            elementToAppend = document.importNode(fragment.content, true);
+        } else {
+            const fragment = document.getElementById('reading-plan-fragment');
+            elementToAppend = document.importNode(fragment.content, true);
+            const baseUrl = 'https://www.biblegateway.com/passage/?search=' + json.plans[1].replaceAll('/', ';');
+            const jp = elementToAppend.querySelector('a:nth-child(1)');
+            const en = elementToAppend.querySelector('a:nth-child(2)');
+            jp.href = baseUrl + '&version=JLB';
+            jp.innerText = json.plans[0];
+            en.href = baseUrl + '&version=NIV';
+            en.innerText = json.plans[1];
+        }
+        readingPlan.querySelector('.loading').remove();
+        readingPlan.append(elementToAppend);
+    }
+
     window.addEventListener('load', (event) => {
+        // 今日の日付
         const today = new Date();
         const m = today.getMonth() + 1;
         const d = today.getDate();
 
-        const monthSelector = `.monthly-plan:nth-child(${m})`
-        document.querySelector(monthSelector).classList.add('current-month');
-        const daySelector = `.monthly-plan:nth-child(${m}) li:nth-child(${d})`;
-        document.querySelector(daySelector).classList.add('today');
-
-    });
-
-    // クリックされた月のスケジュールを表示
-    window.addEventListener('load', (event) => {
-        const buttons = document.querySelectorAll('.month-button');
-        for (button of buttons) {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelector('.monthly-plan.current-month').classList.remove('current-month');
-                const selector = '.monthly-plan:nth-child(' + e.target.innerHTML + ')';
-                console.log(selector)
-                document.querySelector(selector).classList.add('current-month');
-            });
-        }
+        // リクエストURL
+        const url = document.getElementById('reading-plan-fragment').getAttribute('data-api-url') +
+            '?_month=' + m + '&_day=' + d;
+        setReadingPlan(url);
     });
 </script>

@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+
+.svg {
+    &-white {
+        fill: #fff;
+    }
+    &-black {
+        fill: #000;
+    }
+}
+
+.bg-amikake-A {
+    background:repeating-linear-gradient(
+        45deg,
+        #dde,
+        #dde 2px,
+        #eee 0,
+        #eee 4px
+    );
+}
