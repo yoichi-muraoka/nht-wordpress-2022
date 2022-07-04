@@ -1,18 +1,57 @@
 @charset 'UTF-8';
 
-// Top Page
-#welcome {
-    height: 100vh;
-    background-image: url(../images/top_welcome.1.jpg);
-    background-position: center center;
-    background-size: auto 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
+// トップページ
+#home {
+    #welcome {
+        height: 100vh;
+        background-image: url(../images/top_welcome.1.jpg);
+        background-position: center center;
+        background-size: auto 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+    }
+    
+    #news a, #message a {
+        text-decoration: none;
+    }
 }
 
-#news a, #message a {
-    text-decoration: none;
+// ニューホープについて
+#about {
+    .statement {
+        border-top: 4px solid #000;
+        border-bottom: 9px double #000;
+    }
+
+    .core-values {
+        background-image: url(../images/about_corevalue-bg.png);
+        background-attachment: fixed;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;	
+    }
+    
+    .core-value-box {
+      background: rgba(52, 171, 219, .9);
+    }
+    
+    .core-value-box p {
+        margin: 10px 0;
+    }
+    .core-value-box .core-value-ja, .core-value-box .core-value-en {
+        font-size: 120%;
+        border-top: 1px solid #000;
+    }
+    .core-value-box .core-value-scripture-ja, .core-value-box .core-value-scripture-en {
+        font-size: 80%;
+        font-style: italic;
+        color: #445;
+    }
+    .core-value-box .core-value-index {
+        font-size: 300%;
+        text-align: center;
+    }
 }

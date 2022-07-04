@@ -1,3 +1,18 @@
+@charset "UTF-8";
+.yamabiko {
+  font-family: arial;
+}
+
+.yamabiko::before {
+  content: "\5c";
+  margin-right: 0.3em;
+}
+
+.yamabiko::after {
+  content: "\2f";
+  margin-left: 0.3em;
+}
+
 .svg-white {
   fill: #fff;
 }
@@ -8,6 +23,24 @@
 
 .bg-amikake-A {
   background: repeating-linear-gradient(45deg, #dde, #dde 2px, #eee 0, #eee 4px);
+}
+
+.video-responsive {
+  width: 100%;
+  /*横幅いっぱいにwidthを指定*/
+  padding-bottom: 56.25%;
+  /*高さをpaddingで指定(16:9)*/
+  height: 0px;
+  /*高さはpaddingで指定するためheightは0に*/
+  position: relative;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -50,7 +83,25 @@ body {
   font-size: 1rem;
 }
 
-#welcome {
+.after-nav {
+  padding-top: 100px;
+}
+
+.section-title-en {
+  display: block;
+  font-weight: 100;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.section-title-ja {
+  display: block;
+  font-size: 0.6em;
+  letter-spacing: 3px;
+}
+
+#home #welcome {
   height: 100vh;
   background-image: url(../images/top_welcome.1.jpg);
   background-position: center center;
@@ -69,7 +120,44 @@ body {
   color: #fff;
 }
 
-#news a, #message a {
+#home #news a, #home #message a {
   text-decoration: none;
+}
+
+#about .statement {
+  border-top: 4px solid #000;
+  border-bottom: 9px double #000;
+}
+
+#about .core-values {
+  background-image: url(../images/about_corevalue-bg.png);
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#about .core-value-box {
+  background: rgba(52, 171, 219, 0.9);
+}
+
+#about .core-value-box p {
+  margin: 10px 0;
+}
+
+#about .core-value-box .core-value-ja, #about .core-value-box .core-value-en {
+  font-size: 120%;
+  border-top: 1px solid #000;
+}
+
+#about .core-value-box .core-value-scripture-ja, #about .core-value-box .core-value-scripture-en {
+  font-size: 80%;
+  font-style: italic;
+  color: #445;
+}
+
+#about .core-value-box .core-value-index {
+  font-size: 300%;
+  text-align: center;
 }
 /*# sourceMappingURL=nht-style.css.map */

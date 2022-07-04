@@ -13,7 +13,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body id="<?php h(getSlug()) ?>">
 
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">

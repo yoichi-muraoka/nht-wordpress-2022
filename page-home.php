@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="welcome">
+<section id="welcome" class="after-nav">
     <div class="container">
         <h2 class="display-1">ALOHA!</h2>
         <p>アロハ！ニューホープ東京へようこそ！<br>あなたをオハナ(家族)として歓迎します。</p>
