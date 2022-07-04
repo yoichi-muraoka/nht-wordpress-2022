@@ -51,6 +51,7 @@
         event.preventDefault();
         document.querySelector('.nav-tabs .active').classList.remove('active');
         event.target.classList.toggle('active');
-        document.querySelectorAll('.toggle-show_hide').forEach(element => element.classList.toggle('d-none'));
+        document.querySelectorAll('.toggle-show_hide').forEach(element => element.classList.add('d-none'));
+        document.querySelector(event.target.getAttribute('data-target')).classList.remove('d-none');
     }));
 }

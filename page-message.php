@@ -11,22 +11,29 @@
 <div class="nav-tabs">
     <ul class="nav container">
         <li class="nav-item">
-            <a class="nav-link active toggler-show_hide" href="message-note">Message Note</a>
+            <a class="nav-link active toggler-show_hide" href="#message-note" data-target="#message-note">Message Note</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link toggler-show_hide" href="announce">Announce</a>
+            <a class="nav-link toggler-show_hide" href="#announce" data-target="#announce">Announce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link toggler-show_hide" href="#video" data-target="#video">Video</a>
         </li>
     </ul>
 </div>
 
 <!-- メッセージノート -->
-<div id="message-note" class="toggle-show_hide">
-    <?php $customPosts = getCustomPosts('message', 1); ?>
-    <?php if ($customPosts->have_posts()) : $customPosts->the_post(); ?>
+<?php $customPosts = getCustomPosts('message', 1); ?>
+<?php if ($customPosts->have_posts()) : $customPosts->the_post(); ?>
+    <div class="container pt-3">
+        <p class="h6 d-inline-block bg-secondary text-white py-1 px-3"><?php the_title(); ?></p>
+    </div>
+    
+    <div id="message-note" class="toggle-show_hide">
         <section class="container my-3">
-            <header>
-                <p class="h5"><?php the_title(); ?></p>
-            </header>
+            <p><?php the_field('messanger'); ?></p>
+            <p><?php the_field('bible_verse'); ?></p>
+            <p><a href="">PDFダウンロード</a></p>
             <section id="note-ja" class="mb-5">
                 <h2 class="display-6"><?php the_field('title_ja'); ?></h2>
                 <div><?php the_field('message_note_ja'); ?></div>
@@ -41,7 +48,7 @@
                     </svg></button>
             </section>
             <section id="note-en">
-                <h2 class="display-6"><?php the_field('title_en'); ?></h2>
+                <h2 class="display-6"><?php the_field('title_ja'); ?></h2>
                 <div><?php the_field('message_note_en'); ?></div>
                 <button class="fill" data-lang="en">Fill Blanks<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -53,23 +60,27 @@
                         <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
                     </svg></button>
             </section>
-        </section>
-    
-        <script src="<?php printPath('js/message-note.js'); ?>"></script>
-    
-    <?php wp_reset_postdata();
-    endif; ?>
-</div><!-- /#message-note -->
+        </section>      
+    </div><!-- /#message-note -->
+
+    <!-- YouTube動画埋め込み -->
+    <div id="video" class="toggle-show_hide container py-4 d-none">
+        <div class="video-responsive">
+            <?php the_field('video_iframe'); ?>
+        </div>
+    </div>
+<?php wp_reset_postdata();
+endif; ?>
 
 <!-- アナウンス(新着情報) -->
-<section id="announce" class="toggle-show_hide d-none">
+<section id="announce" class="toggle-show_hide container d-none">
     <h2>Announce</h2>
     <?php $customPosts = getCustomPosts('news', 5); ?>
     <?php if ($customPosts->have_posts()) : ?>
         <?php while ($customPosts->have_posts()) : $customPosts->the_post(); ?>
-            <article>
+            <article class="mb-5">
                 <h3><?php the_title(); ?></h3>
-                <div><?php the_content(); ?></div>
+                <div><?php the_field('content'); ?></div>
             </article>
         <?php endwhile;
         wp_reset_postdata(); ?>
@@ -78,4 +89,5 @@
     <?php endif; ?>
 </section>
 
+<script src="<?php printPath('js/message-note.js'); ?>"></script>
 <?php get_footer(); ?>
