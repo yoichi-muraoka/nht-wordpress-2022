@@ -58,7 +58,7 @@ get_header();
 </section>
 
 <div class="text-center my-5">
-    <a class="btn btn-secondary text-white me-2" href="<?php h(home_url('/message/archives')); ?>">アーカイブを見る<br>Show Archives</a>
+    <a class="btn btn-secondary text-white me-2" href="<?php h(home_url('/archives/message')); ?>">アーカイブを見る<br>Show Archives</a>
     <a class="btn btn-secondary text-white ms-2" href="https://www.youtube.com/channel/UCQ8mwkP818Y5wHMY_UdxhZw" target="_blank">過去のメッセージ動画<br>YouTube Channel</a>
 </div>
 
