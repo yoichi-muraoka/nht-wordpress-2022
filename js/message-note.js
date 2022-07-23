@@ -1,22 +1,26 @@
 {
   const blanks = document.querySelectorAll('.blank')
   blanks.forEach(blank => {
-    // 入力欄の幅設定
-    const answer = blank.getAttribute('data-answer')
-    if (answer) {
-      const regExp = new RegExp(/^[ a-zA-Z0-9!-/:-@¥[-`{-~]*$/)
-      const size = regExp.test(answer) ? answer.length / 2 : answer.length
-      blank.style.width = size + 'em'
-    } else {
-      blank.style.width = '5em'
-    }
     // コピー用spanタグの追加
-    blank.parentNode.insertBefore(document.createElement('span'), blank)
+    const spanElementToAdd = document.createElement('span')
+    spanElementToAdd.classList.add('blank-span', 'is-empty')
+    spanElementToAdd.addEventListener('click', (e) => {
+      e.target.classList.add('is-filling')
+    })
+
+    blank.parentNode.insertBefore(spanElementToAdd, blank)
     blank.addEventListener('change', event => {
       const span = event.target.previousElementSibling
       span.innerText = event.target.value
+      span.classList.remove('is-filling')
+      if(span.innerText == '') {
+        span.classList.add('is-empty')
+      } else {
+        span.classList.remove('is-empty')
+      }
     })
   })
+
   // 空欄埋めボタンの設定
   const fillButtons = document.querySelectorAll('button.fill')
   fillButtons.forEach(button => {
@@ -45,6 +49,10 @@
   })
 }
 
+
+/**
+ * 表示コンテンツ(ノート、アナウンス、動画)の切り替え
+ */
 {
     document.querySelectorAll('.toggler-show_hide')
     .forEach(button => button.addEventListener('click', (event) => {

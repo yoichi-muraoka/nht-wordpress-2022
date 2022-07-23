@@ -169,4 +169,29 @@ body {
   font-size: 300%;
   text-align: center;
 }
+
+#message-note .point .blank {
+  display: none;
+}
+
+#message-note .point .is-filling + .blank {
+  display: inline-block;
+}
+
+#message-note .point .blank-span {
+  display: inline-block;
+  border-bottom: 1px solid #000;
+}
+
+#message-note .point .blank-span.is-empty {
+  width: 5em;
+  height: 1em;
+}
+
+#message-note .point .blank-span.is-filling {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
 /*# sourceMappingURL=nht-style.css.map */
