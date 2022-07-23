@@ -4,8 +4,9 @@
     // コピー用spanタグの追加
     const spanElementToAdd = document.createElement('span')
     spanElementToAdd.classList.add('blank-span', 'is-empty')
-    spanElementToAdd.addEventListener('click', (e) => {
-      e.target.classList.add('is-filling')
+    spanElementToAdd.addEventListener('click', event => {
+      event.target.classList.add('is-filling')
+      event.target.nextElementSibling.focus()
     })
 
     blank.parentNode.insertBefore(spanElementToAdd, blank)
@@ -18,6 +19,10 @@
       } else {
         span.classList.remove('is-empty')
       }
+    })
+    blank.addEventListener('blur', event => {
+      const span = event.target.previousElementSibling
+      span.classList.remove('is-filling')
     })
   })
 
