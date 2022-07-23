@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="mt-4">
-            <a class="btn btn-primary text-white" href="">Download Message Note (PDF)</a>
+            <a class="btn btn-primary text-white" href="<?php echo the_field('note_pdf'); ?>">Download Message Note (PDF)</a>
         </div>
 
         <hr class="my-4">
