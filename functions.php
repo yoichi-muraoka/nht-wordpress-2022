@@ -1,5 +1,9 @@
 <?php
 
+/*---------------------
+   ユーティリティ
+----------------------*/
+
 //htmlspecialchars省略形
 function h($string, $output = true) {
     $escaped = htmlspecialchars($string, ENT_QUOTES);
@@ -73,3 +77,24 @@ function getPaginationSource($plusMinus = 2) {
         'total' => $total
     ];
 }
+
+
+/*---------------------
+   管理ページの機能追加
+----------------------*/
+
+// メッセンジャーの選択肢 (https://whitewood-hp.com/web-tips/archives/3901)
+function acf_load_messanger_field_choices( $field ) {
+    $field['choices'] = array();
+    $args = array('posts_per_page' => -1,'post_type' => 'messangers','order' => 'ASC');
+    $messangers=get_posts($args);
+    foreach($messangers as $post):
+        setup_postdata($post);
+        $field['choices'][$post -> ID] = $post -> post_title;
+    endforeach;
+    wp_reset_postdata();
+ 
+    return $field;
+}
+ 
+add_filter('acf/load_field/name=messanger', 'acf_load_messanger_field_choices');
