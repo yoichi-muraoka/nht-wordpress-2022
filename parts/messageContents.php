@@ -24,9 +24,12 @@
                 <img class="" src="<?php printPath('images/bible-icon.svg'); ?>" width="50">
             </div>
             <div class="">
-                <?php $verses = explode('/', get_field('bible_verse')); ?>
-                <span class="d-block"><?php h($verses[0]); ?></span>
-                <span class="d-block"><?php h($verses[1]); ?></span>
+                <?php 
+                    $verses = explode('/', get_field('bible_verse')); 
+                    $bibleGatewayUrl = 'https://www.biblegateway.com/passage/?search=' . str_replace('・', ';', $verses[1]) . '&version=';
+                ?>
+                <a class="d-block" target="_blank" href="<?php echo $bibleGatewayUrl . 'JLB'; ?>"><?php h($verses[0]); ?></a>
+                <a class="d-block" target="_blank" href="<?php echo $bibleGatewayUrl . 'NIV'; ?>"><?php h($verses[1]); ?></a>
             </div>
         </div>
         <div class="mt-4">
