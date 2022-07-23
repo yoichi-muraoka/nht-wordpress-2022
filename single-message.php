@@ -41,8 +41,7 @@ get_header();
 <?php endif; ?>
 
 <!-- アナウンス(新着情報) -->
-<section id="announce" class="toggle-show_hide container d-none">
-    <h2>Announce</h2>
+<section id="announce" class="toggle-show_hide container d-none pt-4">
     <?php $customPosts = getCustomPosts('news', 5); ?>
     <?php if ($customPosts->have_posts()) : ?>
         <?php while ($customPosts->have_posts()) : $customPosts->the_post(); ?>

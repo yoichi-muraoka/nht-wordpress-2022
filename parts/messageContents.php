@@ -1,12 +1,38 @@
-<div class="container pt-3">
-    <p class="h6 d-inline-block bg-secondary text-white py-1 px-3"><?php the_title(); ?></p>
-</div>
-
 <div id="message-note" class="toggle-show_hide">
     <section class="container my-3">
-        <p><?php the_field('messanger'); ?></p>
-        <p><?php the_field('bible_verse'); ?></p>
-        <p><a href="">PDFダウンロード</a></p>
+        <div class="mt-2">
+            <p class="h6 d-inline-block bg-secondary text-white py-1 px-3"><?php the_title(); ?></p>
+        </div>
+        <div class="mt-2">
+            <h2 class="h3">
+                <span class="d-block"><?php the_field('title_ja'); ?></span>
+                <span class="d-block"><?php the_field('title_en'); ?></span>
+            </h2>
+        </div>
+        <div class="mt-4 d-flex align-items-center">
+            <div class="me-4">
+                <?php $photo = wp_get_attachment_url(get_post_meta(get_field('messanger_id'), 'photo',true)); ?>
+                <img class="border rounded-circle" src="<?php h($photo); ?>" width="80">
+            </div>
+            <div class="">
+                <span class="d-block h6"><?php echo get_post_meta(get_field('messanger_id'), 'name_ja', true); ?></span>
+                <span class="d-block h6"><?php echo get_the_title(get_field('messanger_id')); ?></span>
+            </div>
+        </div>
+        <div class="mt-4 d-flex align-items-center">
+            <div class="text-center me-4" style="width: 80px;">
+                <img class="" src="<?php printPath('images/bible-icon.svg'); ?>" width="50">
+            </div>
+            <div class="">
+                <?php $verses = explode('/', get_field('bible_verse')); ?>
+                <span class="d-block"><?php h($verses[0]); ?></span>
+                <span class="d-block"><?php h($verses[1]); ?></span>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a class="btn btn-primary text-white" href="">Download Message Note (PDF)</a>
+        </div>
+        <hr class="my-4">
         <section id="note-ja" class="mb-5">
             <h2 class="display-6"><?php the_field('title_ja'); ?></h2>
             <div><?php the_field('message_note_ja'); ?></div>
