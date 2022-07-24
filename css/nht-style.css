@@ -101,6 +101,15 @@ body {
   letter-spacing: 3px;
 }
 
+.nav-tabs .nav-link {
+  background: rgba(0, 0, 0, 0.075);
+  color: #333;
+}
+
+.nav-tabs .nav-link.active {
+  background: transparent;
+}
+
 #home #welcome {
   height: 100vh;
   background-image: url(../images/top_welcome.1.jpg);
@@ -159,5 +168,30 @@ body {
 #about .core-value-box .core-value-index {
   font-size: 300%;
   text-align: center;
+}
+
+#message-note .point .blank {
+  display: none;
+}
+
+#message-note .point .is-filling + .blank {
+  display: inline-block;
+}
+
+#message-note .point .blank-span {
+  display: inline-block;
+  border-bottom: 1px solid #000;
+}
+
+#message-note .point .blank-span.is-empty {
+  width: 5em;
+  height: 1em;
+}
+
+#message-note .point .blank-span.is-filling {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 /*# sourceMappingURL=nht-style.css.map */

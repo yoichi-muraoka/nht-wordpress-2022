@@ -45,16 +45,22 @@
         <div class="container">
             <h2 class="display-6 text-center mb-4">MESSAGE</h2>
             <?php while ($customPosts->have_posts()) : $customPosts->the_post(); ?>
-                <a href="message">
+                <a class="d-block mt-4" href="<?php echo get_the_permalink(); ?>">
                     <dl class="message">
                     <dt class="mb-2"><span class="d-inline-block bg-secondary px-2 text-white fw-normal"><?php the_title(); ?></span></dt>
                         <dd class="text-dark h4 fw-normal mb-0"><?php the_field('title_ja'); ?></dd>
                         <dd class="text-dark h5 fw-normal mt-0"><?php the_field('title_en'); ?></dd>
-                        <dd class="text-dark"><?php the_field('messanger'); ?></dd>
+                        <dd class="text-dark">
+                            <?php echo get_post_meta(get_field('messanger_id'), 'name_ja', true); ?> / 
+                            <?php echo get_the_title(get_field('messanger_id')); ?>
+                        </dd>
                     </dl>
                 </a>
             <?php endwhile; wp_reset_postdata(); ?>
-            <p class="text-center mt-4"><a class="btn btn-primary text-white" href="">もっと見る<br>Show Archives</a></p>
+            <div class="text-center my-5">
+                <a class="btn btn-primary text-white me-2" href="<?php h(home_url('/archives/message')); ?>">アーカイブを見る<br>Show Archives</a>
+                <a class="btn btn-primary text-white ms-2" href="https://www.youtube.com/channel/UCQ8mwkP818Y5wHMY_UdxhZw" target="_blank">過去のメッセージ動画<br>YouTube Channel</a>
+            </div>
         </div>
     </section>
 <?php endif; ?>
