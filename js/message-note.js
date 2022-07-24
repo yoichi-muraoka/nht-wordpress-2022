@@ -34,6 +34,9 @@
       document.querySelectorAll(noteId + ' .blank').forEach(blank => {
         blank.value = blank.getAttribute('data-answer')
         blank.previousElementSibling.innerText = blank.value
+        document.querySelectorAll('.blank-span').forEach(e => {
+          e.classList.remove('is-empty')
+        })
       })
     })
   })
