@@ -196,6 +196,30 @@ body {
   overflow: hidden;
 }
 
+#devotion-schedule .month-button {
+  cursor: pointer;
+}
+
+#devotion-schedule .monthly-plan {
+  display: none;
+}
+
+#devotion-schedule .monthly-plan.current-month {
+  display: block;
+}
+
+#devotion-schedule .monthly-plan.current-month .today {
+  background-color: #e74c3c;
+}
+
+#devotion-schedule .monthly-plan.current-month .today .day {
+  color: #fff;
+}
+
+#devotion-schedule .monthly-plan.current-month .today .bible-verse {
+  color: #fff;
+}
+
 #devotion-schedule .monthly-plan ol {
   list-style-type: none;
   padding: 0;
@@ -220,7 +244,15 @@ body {
 }
 
 #devotion-schedule .monthly-plan ol li:hover {
-  background: #fff;
+  background-color: #e74c3c;
+}
+
+#devotion-schedule .monthly-plan ol li:hover .day {
+  color: #fff;
+}
+
+#devotion-schedule .monthly-plan ol li:hover .bible-verse {
+  color: #fff;
 }
 
 #devotion-schedule .monthly-plan ol li .day {
@@ -245,5 +277,13 @@ body {
 
 #devotion-schedule .monthly-plan ol li .bible-verse span {
   display: inline-block;
+}
+
+#devotion-faq dt {
+  margin-bottom: 0.5rem;
+}
+
+#devotion-faq dd {
+  margin-bottom: 1.5rem;
 }
 /*# sourceMappingURL=nht-style.css.map */

@@ -14,7 +14,7 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
     <?php $m = 1; ?>
     <?php foreach(getEnglishMonths() as $em): ?>
     <div class="col-3 mb-3">
-        <div class="px-1 py-2 bg-secondary text-white text-center">
+        <div class="px-1 py-2 bg-secondary text-white text-center month-button" data-month="<?php h($m); ?>">
             <span class="h2"><?php h($m); ?></span>月<br>
             <span class=""><?php h(substr($em, 0, 3)); ?>.</span>
         </div>
@@ -78,10 +78,8 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
         const buttons = document.querySelectorAll('.month-button');
         for (button of buttons) {
             button.addEventListener('click', (e) => {
-                e.preventDefault();
                 document.querySelector('.monthly-plan.current-month').classList.remove('current-month');
-                const selector = '.monthly-plan:nth-child(' + e.target.innerHTML + ')';
-                console.log(selector)
+                const selector = '.monthly-plan:nth-child(' + e.currentTarget.getAttribute('data-month') + ')';
                 document.querySelector(selector).classList.add('current-month');
             });
         }

@@ -84,7 +84,23 @@
 
 // デボーションスケジュール
 #devotion-schedule {
+    .month-button {
+        cursor: pointer;
+    }
     .monthly-plan {
+        display: none;
+        &.current-month {
+            display: block;
+            .today {
+                background-color: $mainColor;
+                .day {
+                    color: #fff;
+                }
+                .bible-verse {
+                    color: #fff;
+                }
+            }
+        }
         ol {
             list-style-type: none;
             padding: 0;
@@ -99,7 +115,13 @@
                     background: #e0e0e0;
                 }
                 &:hover {
-                    background: #fff;
+                    background-color: $mainColor;
+                    .day {
+                        color: #fff;
+                    }
+                    .bible-verse {
+                        color: #fff;
+                    }
                 }
                 .day {
                     display: block;
@@ -121,5 +143,14 @@
                 }
             }
         }
+    }
+}
+
+#devotion-faq {
+    dt {
+        margin-bottom: 0.5rem;
+    }
+    dd {
+        margin-bottom: 1.5rem;
     }
 }
