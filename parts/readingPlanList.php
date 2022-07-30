@@ -28,7 +28,7 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
     <?php $m = 1; ?>
     <?php foreach ($annualPlan as $monthlyPlan) : ?>
         <dl class="monthly-plan">
-            <dt class="text-center mb-3"><?php h($m); ?>月 / <?php h(getEnglishMonths()[$m - 1]); ?></dt>
+            <dt class="text-center my-3 h3"><?php h($m); ?>月 / <?php h(getEnglishMonths()[$m - 1]); ?></dt>
             <dd>
                 <ol>
                     <?php $d = 1; ?>
@@ -53,7 +53,7 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
         </dl>
     <?php $m++; ?>
     <?php endforeach; //annual -> month  ?>
-    <div>
+    <div class="bg-amikake-A px-3 pt-3 pb-2">
         <p>通読表をクリックすると、Bible Gatewayというウェブページが開き、該当の聖書箇所を読むことができます。<br>
             By clicking the Scriptures, you can read the passage on Bible Gateway web service.</p>
     </div>

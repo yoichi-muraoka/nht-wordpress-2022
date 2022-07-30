@@ -21,6 +21,10 @@
   fill: #000;
 }
 
+.bg-light-grey {
+  background: #f0f0f0;
+}
+
 .bg-amikake-A {
   background: repeating-linear-gradient(45deg, #dde, #dde 2px, #eee 0, #eee 4px);
 }
@@ -196,6 +200,22 @@ body {
   overflow: hidden;
 }
 
+#devotion-about {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), url(../images/devotion_writing.jpg) center center fixed;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_writing.jpg) center center fixed;
+  background-size: cover;
+}
+
+#devotion-faq {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), url(../images/devotion_journal.png) center center fixed;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_journal.png) center center fixed;
+  background-size: cover;
+}
+
+#devotion-schedule {
+  background: url(../images/devotion_bible.jpg) fixed;
+}
+
 #devotion-schedule .month-button {
   cursor: pointer;
 }
@@ -236,11 +256,11 @@ body {
           align-items: center;
   padding: 0.25em;
   margin-bottom: 1px;
-  background: #f0f0f0;
+  background: rgba(240, 240, 240, 0.5);
 }
 
 #devotion-schedule .monthly-plan ol li:nth-child(2n) {
-  background: #e0e0e0;
+  background: rgba(224, 224, 224, 0.5);
 }
 
 #devotion-schedule .monthly-plan ol li:hover {

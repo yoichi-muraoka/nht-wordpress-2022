@@ -29,7 +29,7 @@ get_header();
     </div>
 </section>
 
-<section id="devotion-jounaling" class="py-4">
+<section id="devotion-jounaling" class="py-4 bg-light-grey">
     <div class="container">
         <h2 class="text-center mb-4">
             <span class="section-title-en">Journaling</span>
@@ -83,14 +83,14 @@ get_header();
     </div>
 </section>
 
-<section id="devotion-recommendation" class="py-4">
+<section id="devotion-recommendation" class="bg-secondary text-white pt-4 pb-5">
     <div class="container">
         <h2 class="text-center mb-4">
             <span class="section-title-en">Recommendation</span>
             <span class="section-title-ja">おすすめの本</span>
         </h2>
         <section>
-            <h3 class="px-2 py-2 text-center bg-amikake-A">
+            <h3 class="px-2 py-2 text-center bg-amikake-A text-dark">
                 <span class="h4 d-block">LIFE Journal</span>
                 <span class="h6 d-block">LIFEジャーナル</span>
             </h3>
@@ -98,20 +98,20 @@ get_header();
             <p>It's the SOAP method journal with the reading plan! You can purchase it at the resource table on the last Sunday of every month or on our online store.</p>
         </section>
         <div>
-            <h3 class="px-2 py-2 mt-4 text-center bg-amikake-A">
+            <h3 class="px-2 py-2 mt-4 text-center bg-amikake-A text-dark">
                 <span class="h4 d-block">Divine Mentor</span>
                 <span class="h6 d-block">あなたを導く神様の個人レッスン</span>
             </h3>
             <p>ニューホープのウェイン先生のデボーションガイド。必読！！ オンラインショップほか、リソーステーブルや、CLC書店（OCCビル2F）で売ってます！</p>
             <p>The Author is Dr. Wayne Cordeiro, who explains why & how you do daily devotions. It's a must read! You can purchase it at the resource table on the last Sunday of every month, our online store or CLC Bookstore on the 2nd Floor of OCC building!</p>
         </div>
-        <div class="text-center mt-4">
-            <a class="btn btn-primary text-white" target="_blank" href="http://newhope365.ocnk.net/">オンラインショップ / Online Store</a>
+        <div class="text-center mt-5">
+            <a class="btn bg-white text-secondary fw-bold" target="_blank" href="http://newhope365.ocnk.net/">オンラインショップ / Online Store</a>
         </div>
     </div>
 </section>
 
-<section id="devotion-faq">
+<section id="devotion-faq" class="py-4">
     <div class="container">
         <h2 class="text-center mb-4">
             <span class="section-title-en">FAQ</span>

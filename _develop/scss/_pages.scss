@@ -82,8 +82,19 @@
     }
 }
 
-// デボーションスケジュール
+// デボーション
+#devotion-about {
+    background: linear-gradient(90deg, rgba(255, 255, 255,0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_writing.jpg) center center fixed;
+    background-size: cover;
+}
+
+#devotion-faq {
+    background: linear-gradient(90deg, rgba(255, 255, 255,0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_journal.png) center center fixed;
+    background-size: cover;
+}
+
 #devotion-schedule {
+    background: url(../images/devotion_bible.jpg) fixed;
     .month-button {
         cursor: pointer;
     }
@@ -110,9 +121,9 @@
                 align-items: center;
                 padding: 0.25em;
                 margin-bottom: 1px;
-                background: #f0f0f0;
+                background: rgba(240, 240, 240, 0.5);
                 &:nth-child(2n) {
-                    background: #e0e0e0;
+                    background: rgba(224, 224, 224, 0.5);
                 }
                 &:hover {
                     background-color: $mainColor;
