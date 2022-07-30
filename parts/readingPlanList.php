@@ -39,11 +39,11 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
                         ?>
                         <li>
                             <a class="bible-verse" target="_blank" href="<?php echo $url . '&version=JLB' ?>">
-                                <?php h($daylyPlan[0]); ?>
+                                <span><?php echo str_replace('/', '</span> / <span>', $daylyPlan[0]); ?></span>
                             </a>
                             <span class="day"><?php h($d); ?></span>
                             <a class="bible-verse" target="_blank" href="<?php echo $url . '&version=NIV' ?>">
-                                <?php h($daylyPlan[1]); ?>
+                                <span><?php echo str_replace('/', '</span> / <span>', $daylyPlan[1]); ?></span>
                             </a>
                         </li>
                     <?php $d++; ?>

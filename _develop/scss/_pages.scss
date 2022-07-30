@@ -101,21 +101,23 @@
                 &:hover {
                     background: #fff;
                 }
-
                 .day {
                     display: block;
-                    flex-basis: 10%;
+                    flex-basis: 15%;
                     text-align: center;
                     font-weight: bold;
                 }
                 .bible-verse {
                     display: block;
-                    flex-basis: 45%;
+                    flex-basis: 42.5%;
                     text-decoration: none;
                     color: #111;
-                }
-                a:nth-child(1) {
-                    text-align: right;
+                    &:nth-child(1) {
+                        text-align: right;
+                    }
+                    span {
+                        display: inline-block;
+                    }
                 }
             }
         }

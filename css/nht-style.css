@@ -225,21 +225,25 @@ body {
 
 #devotion-schedule .monthly-plan ol li .day {
   display: block;
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
   text-align: center;
   font-weight: bold;
 }
 
 #devotion-schedule .monthly-plan ol li .bible-verse {
   display: block;
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
+  -ms-flex-preferred-size: 42.5%;
+      flex-basis: 42.5%;
   text-decoration: none;
   color: #111;
 }
 
-#devotion-schedule .monthly-plan ol li a:nth-child(1) {
+#devotion-schedule .monthly-plan ol li .bible-verse:nth-child(1) {
   text-align: right;
+}
+
+#devotion-schedule .monthly-plan ol li .bible-verse span {
+  display: inline-block;
 }
 /*# sourceMappingURL=nht-style.css.map */
