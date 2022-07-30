@@ -41,7 +41,7 @@ body {
 
 .section-title-en {
     display: block;
-    font-weight: 100;
+    font-weight: 400;
     font-size: 1.3em;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -49,8 +49,9 @@ body {
 
 .section-title-ja {
     display: block;
-    font-size: 0.6em;
+    font-size: 0.8em;
     letter-spacing: 3px;
+    font-weight: normal;
 }
 
 // nav-tabs

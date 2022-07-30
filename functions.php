@@ -41,6 +41,11 @@ function getSlug() {
     return get_post_field('post_name', get_the_ID());
 }
 
+// 英語の月名リストの取得
+function getEnglishMonths() {
+    return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+}
+
 /**
  * ページネーションに必要な情報を連想配列で返す
  * @param $plusMinus 現在ページの前後に何ページ表示させるか

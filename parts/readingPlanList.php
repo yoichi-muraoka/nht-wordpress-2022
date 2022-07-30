@@ -4,19 +4,22 @@ $annualPlan = getReadingPlan();
 $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 ?>
 
-<div class="row">
-    <h2><span class="section-title-en">Reading Plan</span><span class="section-title-ja">聖書通読表</span></h2>
-</div>
+<h2 class="text-center mb-4">
+    <span class="section-title-en">Reading Plan</span>
+    <span class="section-title-ja">聖書通読表</span>
+</h2>
 
 <!-- 月ボタン -->
-<div class="col-xs-12 col-md-6">
-    <ul class="row month-buttons">
-        <?php for ($m = 1; $m <= 12; $m++) : ?>
-            <li class="col-xs-2 col-md-4">
-                <a class="month-button" href=""><?php h($m); ?></a>
-            </li>
-        <?php endfor; ?>
-    </ul>
+<div class="row">
+    <?php $m = 1; ?>
+    <?php foreach(getEnglishMonths() AS $em): ?>
+    <div class="col-3 mb-3">
+        <div class="px-1 py-2 bg-secondary text-white text-center">
+            <span class="h2"><?php h($m); ?></span>月<br>
+            <span class=""><?php h(substr($em, 0, 3)); ?>.</span>
+        </div>
+    </div>
+    <?php $m++; endforeach; ?>
 </div>
 
 <!-- 通読表 -->
@@ -30,21 +33,26 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
             <dt><?php h($m); ?>月 / <?php h($englishMonths[$m - 1]) ?></dt>
             <dd>
                 <ol>
-                    <?php foreach ($annualPlan[$m - 1] as $daylyPlan) : ?>
+                    <?php 
+                        $d = 1;
+                        foreach ($annualPlan[$m - 1] as $daylyPlan) :
+                    ?>
                         <?php
                         $url = 'https://www.biblegateway.com/passage/?search=' .
                             urlencode(str_replace('/', ';', $daylyPlan[1]));
                         ?>
                         <li>
                             <a target="_blank" href="<?php echo $url . '&version=JLB' ?>">
-                                <?php echo htmlspecialchars($daylyPlan[0], ENT_QUOTES); ?>
+                                <?php h($daylyPlan[0]); ?>
                             </a>
-                            /
+                            <span><?php h($d); ?></span>
                             <a target="_blank" href="<?php echo $url . '&version=NIV' ?>">
                                 <?php h($daylyPlan[1]); ?>
                             </a>
                         </li>
-                    <?php endforeach; //month -> day 
+                    <?php 
+                        $d++;
+                        endforeach; //month -> day 
                     ?>
                 </ol>
             </dd>
