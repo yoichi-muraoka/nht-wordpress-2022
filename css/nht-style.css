@@ -195,4 +195,49 @@ body {
   height: 0;
   overflow: hidden;
 }
+
+#devotion-schedule .monthly-plan ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+#devotion-schedule .monthly-plan ol li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.25em;
+  margin-bottom: 1px;
+  background: #f0f0f0;
+}
+
+#devotion-schedule .monthly-plan ol li:nth-child(2n) {
+  background: #e0e0e0;
+}
+
+#devotion-schedule .monthly-plan ol li:hover {
+  background: #fff;
+}
+
+#devotion-schedule .monthly-plan ol li span {
+  display: block;
+  width: 3em;
+  text-align: center;
+  font-weight: bold;
+}
+
+#devotion-schedule .monthly-plan ol li a {
+  display: block;
+  width: calc(50% - 1.5em);
+  text-decoration: none;
+  color: #111;
+}
+
+#devotion-schedule .monthly-plan ol li a:nth-child(1) {
+  text-align: right;
+}
 /*# sourceMappingURL=nht-style.css.map */

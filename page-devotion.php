@@ -72,7 +72,7 @@ get_header();
                 <h3 class="h4">4. Prayer（祈り）</h3>
                 <p>自分がこのジャーナリングを通して与えられた祈りを書き記しましょう。</p>
                 <p>Write out the prayers which came to you through journaling that day.</p>
-                </sections=>
+            </section>
         </div>
     </div>
 </section>
@@ -161,29 +161,41 @@ get_header();
             <div class="col-md-6">
                 <dl>
                     <dt>必ずこの聖書通読表でやらなければいけないの？
-                        <br>Do I need to follow the reading plan?</dt>
+                        <br>Do I need to follow the reading plan?
+                    </dt>
                     <dd>そんなことないけれど、同じところを読んでいるとシェアする仲間が増えますよ
-                        <br>No, but it will be easier to share your journal if you are on the same reading plan.</dd>
+                        <br>No, but it will be easier to share your journal if you are on the same reading plan.
+                    </dd>
                     <dt>朝も夜もなかなか時間が取れません
-                        <br>It is difficult to find time to do devotion in the morning or at night.</dt>
+                        <br>It is difficult to find time to do devotion in the morning or at night.
+                    </dt>
                     <dd>1日の中で一番大切な時間を神様に捧げるのが理想です。しかしながら、忙しい現代人はなかなか時間を取れません！通勤の電車で10分でも聖書に触れる時間をとってください。完璧をめざさず、神様との時間を取る、ということを目標に。
-                        <br>It is ideal to give our time to God when we are at our best. However, in this modern society, we are all busy! Even 10 minutes of reading the Bible on the train while commuting would help you. You don't have to follow the plan perfectly. Please enjoy the time you have with God.</dd>
+                        <br>It is ideal to give our time to God when we are at our best. However, in this modern society, we are all busy! Even 10 minutes of reading the Bible on the train while commuting would help you. You don't have to follow the plan perfectly. Please enjoy the time you have with God.
+                    </dd>
                     <dt>親子で一緒にやりたいです
-                        <br>I want to do devotion with my children.</dt>
+                        <br>I want to do devotion with my children.
+                    </dt>
                     <dd>こども用のプログラムがあり、親子で同じ箇所を読んでいきますので、ぜひご活用ください。
-                        <br>You can pick up "Kid's Journal", and parents can join its reading plan to do devotion with your children.</dd>
+                        <br>You can pick up "Kid's Journal", and parents can join its reading plan to do devotion with your children.
+                    </dd>
                     <dt>毎年、年末の時期に黙示録が来て気分が暗くなる
-                        <br>Reading the book of Revelation is depressing each year..</dt>
+                        <br>Reading the book of Revelation is depressing each year..
+                    </dt>
                     <dd>その気持ちはわかりますが、実は黙示録は恵みの書なんです！！
-                        <br>The Book of Revelation is filled with God's blessings for us. Let us discover it!</dd>
+                        <br>The Book of Revelation is filled with God's blessings for us. Let us discover it!
+                    </dd>
                     <dt>民数記を読んでいると眠くなってしまいます
-                        <br>I don't like Numbers and I fall asleep when I read the book of Numbers.</dt>
+                        <br>I don't like Numbers and I fall asleep when I read the book of Numbers.
+                    </dt>
                     <dd>その気持ちはわかりますが、実は数字には神様の恵みが現れているのですよ！！
-                        <br>We understand that feeling. The book of Numbers actually shows the grace and blessings of God!! You can glean gems from Numbers too.</dd>
+                        <br>We understand that feeling. The book of Numbers actually shows the grace and blessings of God!! You can glean gems from Numbers too.
+                    </dd>
                     <dt>自分が勝手に解釈してしまっている気がする
-                        <br>Do I interpret the Bible accurately?</dt>
+                        <br>Do I interpret the Bible accurately?
+                    </dt>
                     <dd>毎日続けることで、間違った解釈も少しずつ聖霊が正してくれます。それでも不安な方は、牧師やスタッフにご相談ください。
-                        <br>As you continue reading the Bible every day, the Holy Spirit teaches, guides, and corrects us to the right understanding. If you have a question, please do not hesitate to ask questions to pastors or staff.</dd>
+                        <br>As you continue reading the Bible every day, the Holy Spirit teaches, guides, and corrects us to the right understanding. If you have a question, please do not hesitate to ask questions to pastors or staff.
+                    </dd>
                 </dl>
             </div>
         </div>

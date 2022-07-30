@@ -12,31 +12,27 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
 <!-- 月ボタン -->
 <div class="row">
     <?php $m = 1; ?>
-    <?php foreach(getEnglishMonths() AS $em): ?>
+    <?php foreach(getEnglishMonths() as $em): ?>
     <div class="col-3 mb-3">
         <div class="px-1 py-2 bg-secondary text-white text-center">
             <span class="h2"><?php h($m); ?></span>月<br>
             <span class=""><?php h(substr($em, 0, 3)); ?>.</span>
         </div>
     </div>
-    <?php $m++; endforeach; ?>
+    <?php $m++; ?>
+    <?php endforeach; ?>
 </div>
 
 <!-- 通読表 -->
 <div class="col-xs-12 col-md-6">
-    <div class="col-xs-12">
-        <p>通読表をクリックすると、Bible Gatewayというウェブページが開き、該当の聖書箇所を読むことができます。<br>
-            By clicking the Scriptures, you can read the passage on Bible Gateway web service.</p>
-    </div>
-    <?php for ($m = 1; $m <= 12; $m++) : ?>
+    <?php $m = 1; ?>
+    <?php foreach ($annualPlan as $monthlyPlan) : ?>
         <dl class="monthly-plan">
-            <dt><?php h($m); ?>月 / <?php h($englishMonths[$m - 1]) ?></dt>
+            <dt class="text-center"><?php h($m); ?>月 / <?php h(getEnglishMonths()[$m - 1]); ?></dt>
             <dd>
                 <ol>
-                    <?php 
-                        $d = 1;
-                        foreach ($annualPlan[$m - 1] as $daylyPlan) :
-                    ?>
+                    <?php $d = 1; ?>
+                    <?php foreach ($monthlyPlan as $daylyPlan): ?>
                         <?php
                         $url = 'https://www.biblegateway.com/passage/?search=' .
                             urlencode(str_replace('/', ';', $daylyPlan[1]));
@@ -50,15 +46,17 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
                                 <?php h($daylyPlan[1]); ?>
                             </a>
                         </li>
-                    <?php 
-                        $d++;
-                        endforeach; //month -> day 
-                    ?>
+                    <?php $d++; ?>
+                    <?php endforeach; //month -> day ?>
                 </ol>
             </dd>
         </dl>
-    <?php endfor; //annual -> month 
-    ?>
+    <?php $m++; ?>
+    <?php endforeach; //annual -> month  ?>
+    <div class="col-xs-12">
+        <p>通読表をクリックすると、Bible Gatewayというウェブページが開き、該当の聖書箇所を読むことができます。<br>
+            By clicking the Scriptures, you can read the passage on Bible Gateway web service.</p>
+    </div>
 </div>
 
 <script>

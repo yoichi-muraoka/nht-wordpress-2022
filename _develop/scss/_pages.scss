@@ -81,3 +81,43 @@
         }
     }
 }
+
+// デボーションスケジュール
+#devotion-schedule {
+    .monthly-plan {
+        ol {
+            list-style-type: none;
+            padding: 0;
+            li {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 0.25em;
+                margin-bottom: 1px;
+                background: #f0f0f0;
+                &:nth-child(2n) {
+                    background: #e0e0e0;
+                }
+                &:hover {
+                    background: #fff;
+                }
+
+                span {
+                    display: block;
+                    width: 3em;
+                    text-align: center;
+                    font-weight: bold;
+                }
+                a {
+                    display: block;
+                    width: calc(50% - 1.5em);
+                    text-decoration: none;
+                    color: #111;
+                }
+                a:nth-child(1) {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
