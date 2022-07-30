@@ -81,3 +81,87 @@
         }
     }
 }
+
+// デボーション
+#devotion-about {
+    background: linear-gradient(90deg, rgba(255, 255, 255,0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_writing.jpg) center center fixed;
+    background-size: cover;
+}
+
+#devotion-faq {
+    background: linear-gradient(90deg, rgba(255, 255, 255,0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_journal.png) center center fixed;
+    background-size: cover;
+}
+
+#devotion-schedule {
+    background: url(../images/devotion_bible.jpg) fixed;
+    .month-button {
+        cursor: pointer;
+    }
+    .monthly-plan {
+        display: none;
+        &.current-month {
+            display: block;
+            .today {
+                background-color: $mainColor;
+                .day {
+                    color: #fff;
+                }
+                .bible-verse {
+                    color: #fff;
+                }
+            }
+        }
+        ol {
+            list-style-type: none;
+            padding: 0;
+            li {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 0.25em;
+                margin-bottom: 1px;
+                background: rgba(240, 240, 240, 0.5);
+                &:nth-child(2n) {
+                    background: rgba(224, 224, 224, 0.5);
+                }
+                &:hover {
+                    background-color: $mainColor;
+                    .day {
+                        color: #fff;
+                    }
+                    .bible-verse {
+                        color: #fff;
+                    }
+                }
+                .day {
+                    display: block;
+                    flex-basis: 15%;
+                    text-align: center;
+                    font-weight: bold;
+                }
+                .bible-verse {
+                    display: block;
+                    flex-basis: 42.5%;
+                    text-decoration: none;
+                    color: #111;
+                    &:nth-child(1) {
+                        text-align: right;
+                    }
+                    span {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#devotion-faq {
+    dt {
+        margin-bottom: 0.5rem;
+    }
+    dd {
+        margin-bottom: 1.5rem;
+    }
+}

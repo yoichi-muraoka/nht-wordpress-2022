@@ -4,53 +4,59 @@ $annualPlan = getReadingPlan();
 $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 ?>
 
-<div class="row">
-    <h2><span class="section-title-en">Reading Plan</span><span class="section-title-ja">聖書通読表</span></h2>
-</div>
+<h2 class="text-center mb-4">
+    <span class="section-title-en">Reading Plan</span>
+    <span class="section-title-ja">聖書通読表</span>
+</h2>
 
 <!-- 月ボタン -->
-<div class="col-xs-12 col-md-6">
-    <ul class="row month-buttons">
-        <?php for ($m = 1; $m <= 12; $m++) : ?>
-            <li class="col-xs-2 col-md-4">
-                <a class="month-button" href=""><?php h($m); ?></a>
-            </li>
-        <?php endfor; ?>
-    </ul>
+<div class="row">
+    <?php $m = 1; ?>
+    <?php foreach(getEnglishMonths() as $em): ?>
+    <div class="col-3 mb-3">
+        <div class="px-1 py-2 bg-secondary text-white text-center month-button" data-month="<?php h($m); ?>">
+            <span class="h2"><?php h($m); ?></span>月<br>
+            <span class=""><?php h(substr($em, 0, 3)); ?>.</span>
+        </div>
+    </div>
+    <?php $m++; ?>
+    <?php endforeach; ?>
 </div>
 
 <!-- 通読表 -->
-<div class="col-xs-12 col-md-6">
-    <div class="col-xs-12">
-        <p>通読表をクリックすると、Bible Gatewayというウェブページが開き、該当の聖書箇所を読むことができます。<br>
-            By clicking the Scriptures, you can read the passage on Bible Gateway web service.</p>
-    </div>
-    <?php for ($m = 1; $m <= 12; $m++) : ?>
+<div>
+    <?php $m = 1; ?>
+    <?php foreach ($annualPlan as $monthlyPlan) : ?>
         <dl class="monthly-plan">
-            <dt><?php h($m); ?>月 / <?php h($englishMonths[$m - 1]) ?></dt>
+            <dt class="text-center my-3 h3"><?php h($m); ?>月 / <?php h(getEnglishMonths()[$m - 1]); ?></dt>
             <dd>
                 <ol>
-                    <?php foreach ($annualPlan[$m - 1] as $daylyPlan) : ?>
+                    <?php $d = 1; ?>
+                    <?php foreach ($monthlyPlan as $daylyPlan): ?>
                         <?php
                         $url = 'https://www.biblegateway.com/passage/?search=' .
                             urlencode(str_replace('/', ';', $daylyPlan[1]));
                         ?>
                         <li>
-                            <a target="_blank" href="<?php echo $url . '&version=JLB' ?>">
-                                <?php echo htmlspecialchars($daylyPlan[0], ENT_QUOTES); ?>
+                            <a class="bible-verse" target="_blank" href="<?php echo $url . '&version=JLB' ?>">
+                                <span><?php echo str_replace('/', '</span> / <span>', $daylyPlan[0]); ?></span>
                             </a>
-                            /
-                            <a target="_blank" href="<?php echo $url . '&version=NIV' ?>">
-                                <?php h($daylyPlan[1]); ?>
+                            <span class="day"><?php h($d); ?></span>
+                            <a class="bible-verse" target="_blank" href="<?php echo $url . '&version=NIV' ?>">
+                                <span><?php echo str_replace('/', '</span> / <span>', $daylyPlan[1]); ?></span>
                             </a>
                         </li>
-                    <?php endforeach; //month -> day 
-                    ?>
+                    <?php $d++; ?>
+                    <?php endforeach; //month -> day ?>
                 </ol>
             </dd>
         </dl>
-    <?php endfor; //annual -> month 
-    ?>
+    <?php $m++; ?>
+    <?php endforeach; //annual -> month  ?>
+    <div class="bg-amikake-A px-3 pt-3 pb-2">
+        <p>通読表をクリックすると、Bible Gatewayというウェブページが開き、該当の聖書箇所を読むことができます。<br>
+            By clicking the Scriptures, you can read the passage on Bible Gateway web service.</p>
+    </div>
 </div>
 
 <script>
@@ -72,10 +78,8 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
         const buttons = document.querySelectorAll('.month-button');
         for (button of buttons) {
             button.addEventListener('click', (e) => {
-                e.preventDefault();
                 document.querySelector('.monthly-plan.current-month').classList.remove('current-month');
-                const selector = '.monthly-plan:nth-child(' + e.target.innerHTML + ')';
-                console.log(selector)
+                const selector = '.monthly-plan:nth-child(' + e.currentTarget.getAttribute('data-month') + ')';
                 document.querySelector(selector).classList.add('current-month');
             });
         }

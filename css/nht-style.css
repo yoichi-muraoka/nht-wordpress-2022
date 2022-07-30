@@ -21,6 +21,10 @@
   fill: #000;
 }
 
+.bg-light-grey {
+  background: #f0f0f0;
+}
+
 .bg-amikake-A {
   background: repeating-linear-gradient(45deg, #dde, #dde 2px, #eee 0, #eee 4px);
 }
@@ -89,7 +93,7 @@ body {
 
 .section-title-en {
   display: block;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 1.3em;
   letter-spacing: 1px;
   margin-bottom: 5px;
@@ -97,8 +101,9 @@ body {
 
 .section-title-ja {
   display: block;
-  font-size: 0.6em;
+  font-size: 0.8em;
   letter-spacing: 3px;
+  font-weight: normal;
 }
 
 .nav-tabs .nav-link {
@@ -193,5 +198,112 @@ body {
   width: 0;
   height: 0;
   overflow: hidden;
+}
+
+#devotion-about {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), url(../images/devotion_writing.jpg) center center fixed;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_writing.jpg) center center fixed;
+  background-size: cover;
+}
+
+#devotion-faq {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), url(../images/devotion_journal.png) center center fixed;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(../images/devotion_journal.png) center center fixed;
+  background-size: cover;
+}
+
+#devotion-schedule {
+  background: url(../images/devotion_bible.jpg) fixed;
+}
+
+#devotion-schedule .month-button {
+  cursor: pointer;
+}
+
+#devotion-schedule .monthly-plan {
+  display: none;
+}
+
+#devotion-schedule .monthly-plan.current-month {
+  display: block;
+}
+
+#devotion-schedule .monthly-plan.current-month .today {
+  background-color: #e74c3c;
+}
+
+#devotion-schedule .monthly-plan.current-month .today .day {
+  color: #fff;
+}
+
+#devotion-schedule .monthly-plan.current-month .today .bible-verse {
+  color: #fff;
+}
+
+#devotion-schedule .monthly-plan ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+#devotion-schedule .monthly-plan ol li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.25em;
+  margin-bottom: 1px;
+  background: rgba(240, 240, 240, 0.5);
+}
+
+#devotion-schedule .monthly-plan ol li:nth-child(2n) {
+  background: rgba(224, 224, 224, 0.5);
+}
+
+#devotion-schedule .monthly-plan ol li:hover {
+  background-color: #e74c3c;
+}
+
+#devotion-schedule .monthly-plan ol li:hover .day {
+  color: #fff;
+}
+
+#devotion-schedule .monthly-plan ol li:hover .bible-verse {
+  color: #fff;
+}
+
+#devotion-schedule .monthly-plan ol li .day {
+  display: block;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  text-align: center;
+  font-weight: bold;
+}
+
+#devotion-schedule .monthly-plan ol li .bible-verse {
+  display: block;
+  -ms-flex-preferred-size: 42.5%;
+      flex-basis: 42.5%;
+  text-decoration: none;
+  color: #111;
+}
+
+#devotion-schedule .monthly-plan ol li .bible-verse:nth-child(1) {
+  text-align: right;
+}
+
+#devotion-schedule .monthly-plan ol li .bible-verse span {
+  display: inline-block;
+}
+
+#devotion-faq dt {
+  margin-bottom: 0.5rem;
+}
+
+#devotion-faq dd {
+  margin-bottom: 1.5rem;
 }
 /*# sourceMappingURL=nht-style.css.map */
