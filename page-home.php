@@ -28,13 +28,14 @@
     </section>
 <?php endif; ?>
 
-<section id="devotion" class="pt-4 pb-5 bg-amikake-A">
+<section id="devotion" class="py-4 bg-amikake-A">
     <div class="container">
         <h2 class="display-6 text-center mb-4">Today's Devotion</h2>
         <?php require_once(get_stylesheet_directory() . '/parts/readingPlan.php'); ?>
         <div class="mt-4 pt-4 border-top border-white text-center">
-            <a class="btn btn-primary text-white mb-2" href="">デボーションについて<br>About Devotion</a>
-            <a class="btn btn-primary text-white mb-2" href="">牧師のデボーションを読む<br>Pastor's Devotion Blog</a>
+            <a class="btn btn-primary text-white mb-2" href="<?php echo home_url('/devotion'); ?>">デボーションについて / About Devotion</a>
+            <a class="btn btn-primary text-white mb-2" href="<?php echo home_url('/devotion/plan'); ?>">聖書通読表 / Bible Reading Plan</a>
+            <a class="btn btn-primary text-white mb-2" href="#">牧師のデボーションを読む<br>Pastor's Devotion Blog</a>
         </div>
     </div>
 </section>
