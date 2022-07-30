@@ -45,10 +45,16 @@ get_header();
     <?php $customPosts = getCustomPosts('news', 5); ?>
     <?php if ($customPosts->have_posts()) : ?>
         <?php while ($customPosts->have_posts()) : $customPosts->the_post(); ?>
-            <article class="mb-5">
-                <h3><?php the_title(); ?></h3>
-                <div><?php the_field('content'); ?></div>
-            </article>
+            <div class="container mt-4">
+                <article class="pb-4 border-bottom">
+                    <p><span class="d-inline-block bg-secondary px-2 text-white fw-normal"><?php h(get_the_date()); ?> UP</span></p>
+                    <h3>
+                        <span class="d-inline-block"><?php the_title(); ?></span><br>
+                        <span class="d-inline-block"><?php the_field('title_en'); ?></span>
+                    </h3>
+                    <div><?php the_field('content'); ?></div>
+                </article>
+            </div>
         <?php endwhile;
         wp_reset_postdata(); ?>
     <?php else : ?>

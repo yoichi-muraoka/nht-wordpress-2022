@@ -13,10 +13,10 @@
 <?php if ($customPosts->have_posts()) : ?>
     <section id="news" class="pt-4 pb-2">
         <div class="container">
-            <h2 class="display-6 text-center">NEWS</h2>
+            <h2 class="display-6 text-center mb-4">NEWS</h2>
             <?php while ($customPosts->have_posts()) : $customPosts->the_post(); ?>
-                <a href="news#123">
-                    <dl class="news">
+                <a href="<?php echo home_url('/news#article-' . $post->ID); ?>">
+                    <dl class="news mt-4">
                         <dt class="mb-2"><span class="d-inline-block bg-secondary px-2 text-white fw-normal"><?php h(get_the_date()); ?> UP</span></dt>
                         <dd class="text-dark h4 fw-normal mb-0"><?php the_title(); ?></dd>
                         <dd class="text-dark h5 fw-normal mt-0"><?php the_field('title_en'); ?></dd>
