@@ -223,16 +223,18 @@ body {
   background: #fff;
 }
 
-#devotion-schedule .monthly-plan ol li span {
+#devotion-schedule .monthly-plan ol li .day {
   display: block;
-  width: 3em;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
   text-align: center;
   font-weight: bold;
 }
 
-#devotion-schedule .monthly-plan ol li a {
+#devotion-schedule .monthly-plan ol li .bible-verse {
   display: block;
-  width: calc(50% - 1.5em);
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
   text-decoration: none;
   color: #111;
 }

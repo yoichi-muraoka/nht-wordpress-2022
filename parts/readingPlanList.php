@@ -24,11 +24,11 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
 </div>
 
 <!-- 通読表 -->
-<div class="col-xs-12 col-md-6">
+<div>
     <?php $m = 1; ?>
     <?php foreach ($annualPlan as $monthlyPlan) : ?>
         <dl class="monthly-plan">
-            <dt class="text-center"><?php h($m); ?>月 / <?php h(getEnglishMonths()[$m - 1]); ?></dt>
+            <dt class="text-center mb-3"><?php h($m); ?>月 / <?php h(getEnglishMonths()[$m - 1]); ?></dt>
             <dd>
                 <ol>
                     <?php $d = 1; ?>
@@ -38,11 +38,11 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
                             urlencode(str_replace('/', ';', $daylyPlan[1]));
                         ?>
                         <li>
-                            <a target="_blank" href="<?php echo $url . '&version=JLB' ?>">
+                            <a class="bible-verse" target="_blank" href="<?php echo $url . '&version=JLB' ?>">
                                 <?php h($daylyPlan[0]); ?>
                             </a>
-                            <span><?php h($d); ?></span>
-                            <a target="_blank" href="<?php echo $url . '&version=NIV' ?>">
+                            <span class="day"><?php h($d); ?></span>
+                            <a class="bible-verse" target="_blank" href="<?php echo $url . '&version=NIV' ?>">
                                 <?php h($daylyPlan[1]); ?>
                             </a>
                         </li>
@@ -53,7 +53,7 @@ $englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July'
         </dl>
     <?php $m++; ?>
     <?php endforeach; //annual -> month  ?>
-    <div class="col-xs-12">
+    <div>
         <p>通読表をクリックすると、Bible Gatewayというウェブページが開き、該当の聖書箇所を読むことができます。<br>
             By clicking the Scriptures, you can read the passage on Bible Gateway web service.</p>
     </div>
