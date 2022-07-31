@@ -24,13 +24,15 @@ body {
         &:first-child {
             border-top: 5px solid #0004;
         }
+        &:last-child {
+            border: none;
+        }
     }
     .nav-link {
         font-size: 1.25rem;
         text-align: center;
     }
-    .nav-link [lang="en"] {
-        display: block;
+    .nav-link [lang="ja"] {
         font-size: 1rem;
     }
 }

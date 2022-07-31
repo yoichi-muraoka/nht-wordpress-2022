@@ -77,13 +77,16 @@ body {
   border-top: 5px solid #0004;
 }
 
+.navbar .nav-item:last-child {
+  border: none;
+}
+
 .navbar .nav-link {
   font-size: 1.25rem;
   text-align: center;
 }
 
-.navbar .nav-link [lang="en"] {
-  display: block;
+.navbar .nav-link [lang="ja"] {
   font-size: 1rem;
 }
 
