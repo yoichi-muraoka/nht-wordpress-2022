@@ -24,25 +24,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarToggler">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto">
+          
+          <?php foreach(wp_get_nav_menu_items('main_menu') as $menu): ?>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ホーム<span lang="en">Home</span></a>
+            <a class="nav-link active" href="<?php echo $menu->url; ?>">
+              <span class="d-block" lang="en"><?php echo $menu->title; ?></span>
+              <span class="d-block" lang="ja"><?php echo $menu->attr_title; ?></span>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">ニューホープについて<span lang="en">About New Hope</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">デボーション<span lang="en">Devotion</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">メッセージ<span lang="en">message</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">礼拝の案内<span lang="en">Service</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">リンク<span lang="en">Links</span></a>
-          </li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>

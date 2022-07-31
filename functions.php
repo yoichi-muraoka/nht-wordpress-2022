@@ -87,6 +87,18 @@ function getPaginationSource($plusMinus = 2) {
 /*---------------------
    管理ページの機能追加
 ----------------------*/
+// ナビゲーションメニューの有効化
+function register_custom_menus() {
+    register_nav_menus(
+        [
+            'header-menu' => ( 'ヘッダーメニュー' ),
+            'footer-menu' => ( 'フッターメニュー' )
+        ]
+    );
+}
+
+add_action( 'init', 'register_custom_menus' );
+
 
 // メッセンジャーの選択肢 (https://whitewood-hp.com/web-tips/archives/3901)
 function acf_load_messanger_field_choices( $field ) {

@@ -66,7 +66,7 @@
     </section>
 <?php endif; ?>
 
-<?php $customPosts = getCustomPosts('service-info', 10);  ?>
+<?php $customPosts = getCustomPosts('service-info', -1);  ?>
 <?php if ($customPosts->have_posts()) : ?>
     <section id="service-info" class="pt-4 pb-4 bg-amikake-A">
         <div class="container">
