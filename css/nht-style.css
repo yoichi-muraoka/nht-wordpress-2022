@@ -73,8 +73,20 @@ body {
   border-bottom: 1px dashed #eee;
 }
 
+@media screen and (min-width: 992px) {
+  .navbar .nav-item {
+    border: none;
+  }
+}
+
 .navbar .nav-item:first-child {
   border-top: 5px solid #0004;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar .nav-item:first-child {
+    border: none;
+  }
 }
 
 .navbar .nav-item:last-child {

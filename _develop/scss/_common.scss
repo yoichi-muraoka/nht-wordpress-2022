@@ -21,8 +21,14 @@ body {
     }
     .nav-item {
         border-bottom: 1px dashed #eee;
+        @include larger($lg) {
+            border: none;
+        }
         &:first-child {
             border-top: 5px solid #0004;
+            @include larger($lg) {
+                border: none;
+            }
         }
         &:last-child {
             border: none;
